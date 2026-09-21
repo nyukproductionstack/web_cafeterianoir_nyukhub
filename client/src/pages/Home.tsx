@@ -2,10 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   ArrowDownRight,
   ArrowUpRight,
-  CalendarDays,
   Check,
-  ChevronRight,
-  Clock3,
   Coffee,
   Instagram,
   Mail,
@@ -15,7 +12,6 @@ import {
   ShoppingBag,
   Sparkles,
   X,
-  Zap,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -176,7 +172,8 @@ export default function Home() {
 
   return (
     <div className="page-shell">
-      <header className="site-header">
+      {/* NAVBAR CRISTAL 3D TRANSPARENTE SOBRE HERO */}
+      <header className="site-header glass-3d-nav">
         <a href="#inicio" className="brand-wordmark">
           <span className="wordmark-icon">
             <img src={MARK_IMAGE} alt="Cafetería Noir Emblem" />
@@ -204,11 +201,11 @@ export default function Home() {
       </header>
 
       <main>
-        {/* HERO SECTION - FULL SCREEN, CLEAN IMAGE WITHOUT OVERLAY SHADOW */}
+        {/* HERO SECTION - 100VH FULL SCREEN WITH TRANSPARENT OVERLAY */}
         <section className="hero-section" id="inicio">
           <div className="hero-poster-wrap">
             <img className="reference-hero" src={CLEAN_HERO} alt="Espresso artesanal Cafetería Noir" />
-            <div className="hero-copy-overlay">
+            <div className="hero-copy-overlay glass-card-clean">
               <span className="hero-tag">01 &nbsp; DESPERTAR / 08:00H</span>
               <h2>DESPIERTA<br /><em>EN SERIO.</em></h2>
               <p>Origen único, extracción precisa y ninguna prisa.</p>
@@ -226,25 +223,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* INTRO SECTION */}
-        <section className="intro-section section-shell reveal-on-scroll">
-          <div className="section-index">A / 01</div>
-          <div className="intro-grid">
-            <div>
-              <p className="eyebrow">Café de especialidad / sin ruido</p>
-              <h1>Una pausa<br /><em>con dirección.</em></h1>
-            </div>
-            <div className="intro-copy">
-              <p>En Noir tostamos el momento. Granos de origen único, recetas precisas y una barra que deja que el café hable primero.</p>
-              <div className="intro-detail">
-                <span><Sparkles size={15} /> Tostado lento</span>
-                <span><Clock3 size={15} /> Servido diario</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* MENU SECTION - FULL CARD BACKGROUND IMAGES + OVERLAY TEXT WITH SHADOW */}
+        {/* MENU SECTION - FULL CARD BACKGROUND IMAGES + OVERLAY TEXT */}
         <section className="menu-section section-shell reveal-on-scroll" id="carta">
           <div className="section-header">
             <div>
@@ -344,7 +323,7 @@ export default function Home() {
 
         {/* LOCATION SECTION - REAL GOOGLE MAPS EMBED */}
         <section className="location-section section-shell reveal-on-scroll" id="ubicacion">
-          <div className="section-index">B / 02</div>
+          <div className="section-index">01 / UBICACIÓN</div>
           <div className="location-grid">
             <div>
               <p className="eyebrow">Ubicación / horarios</p>
@@ -391,7 +370,7 @@ export default function Home() {
 
         {/* DELIVERY SECTION */}
         <section className="delivery-section section-shell reveal-on-scroll" id="delivery">
-          <div className="section-index">C / 03</div>
+          <div className="section-index">02 / DELIVERY</div>
           <div className="delivery-grid">
             <div>
               <p className="eyebrow">Pedido / en tu puerta</p>
@@ -426,7 +405,7 @@ export default function Home() {
 
         {/* CONTACT SECTION */}
         <section className="contact-section section-shell reveal-on-scroll" id="contacto">
-          <div className="section-index">D / 04</div>
+          <div className="section-index">03 / CONTACTO</div>
           <div className="contact-grid">
             <div>
               <p className="eyebrow">Contacto / hablemos</p>
