@@ -2,15 +2,17 @@
 
 @layer base {
   :root {
-    --ink: #050508;
+    --ink: #040407;
     --paper: #faf7f2;
-    --espresso: #d4af37;        /* Dorado metálico / Champagne Gold */
-    --espresso-glow: #f3cf65;   /* Brillo ámbar dorado */
-    --amber: #e0a96d;           /* Cobre tostado elegante */
-    --smoke: #a39e93;           /* Gris ceniza sofisticado */
-    --cyan: #f4efe6;
-    --border: rgba(212, 175, 55, 0.18);
-    --border-strong: rgba(212, 175, 55, 0.38);
+    --espresso: #d4af37;        /* Dorado Metálico Royalty */
+    --espresso-bright: #f7d978; /* Brillo Oro metálico */
+    --copper: #e5a968;          /* Cobre cálido 3D */
+    --bronze: #c59b6d;          /* Bronce relieve */
+    --smoke: #a8a297;           /* Ceniza sutil */
+    --border: rgba(247, 217, 120, 0.22);
+    --border-strong: rgba(247, 217, 120, 0.45);
+    --relief-3d-top: inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.35);
+    --relief-3d-bottom: inset 0 -2px 6px 0 rgba(0, 0, 0, 0.85);
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -50,7 +52,7 @@
 }
 
 /* ==========================================
-   NAVBAR CRISTAL 3D TRANSPARENTE SOBRE HERO
+   NAVBAR CRISTAL 3D CON RELIEVE TRANSPARENTE
    ========================================== */
 .site-header.glass-3d-nav {
   position: absolute;
@@ -61,108 +63,129 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 4%;
-  background: rgba(5, 5, 8, 0.18);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 12px 35px 0 rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+  padding: 22px 4%;
+  background: rgba(8, 8, 14, 0.22);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 4px 0 rgba(0, 0, 0, 0.6),
+    0 16px 40px 0 rgba(0, 0, 0, 0.5);
 }
 
 .brand-wordmark {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: var(--paper);
   text-decoration: none;
 }
 
 .wordmark-icon img {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.4));
 }
 
 .wordmark-text {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 28px;
-  letter-spacing: 0.12em;
-  color: var(--espresso);
-  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  font-size: 30px;
+  letter-spacing: 0.14em;
+  background: linear-gradient(135deg, #f7d978 0%, #d4af37 50%, #aa841e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.9));
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 38px;
 }
 
 .site-nav button {
   background: transparent;
   border: 0;
-  color: #e2ded8;
+  color: #e8e4dc;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  transition: color 0.2s ease, text-shadow 0.2s ease;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+  transition: all 0.25s ease;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
 }
 
 .site-nav button:hover {
-  color: var(--espresso);
-  text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+  color: #f7d978;
+  text-shadow: 0 0 14px rgba(247, 217, 120, 0.7);
+  transform: translateY(-1px);
 }
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 22px;
 }
 
 .open-note {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--espresso);
+  padding: 6px 14px;
+  background: rgba(5, 5, 8, 0.6);
+  border: 1px solid rgba(247, 217, 120, 0.3);
+  border-radius: 20px;
+  color: #f7d978;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 4px 12px rgba(0,0,0,0.4);
 }
 
 .open-note i {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: var(--espresso);
-  box-shadow: 0 0 10px var(--espresso);
+  background: #f7d978;
+  box-shadow: 0 0 12px #f7d978;
 }
 
+/* BOTÓN 3D RELIEVE EN CABECERA */
 .header-cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 22px;
-  border: 1px solid var(--espresso);
-  border-radius: 6px;
-  background: linear-gradient(135deg, #d4af37 0%, #aa841e 100%);
-  color: #050508;
+  gap: 8px;
+  padding: 11px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f7d978 0%, #d4af37 50%, #aa841e 100%);
+  color: #040407;
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px 0 rgba(0, 0, 0, 0.4),
+    0 8px 24px rgba(212, 175, 55, 0.4);
   transition: all 0.25s ease;
 }
 
 .header-cta:hover {
-  background: var(--paper);
-  border-color: var(--paper);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
+  background: linear-gradient(135deg, #ffffff 0%, #f7d978 100%);
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.8),
+    0 12px 30px rgba(255, 255, 255, 0.4);
+}
+
+.header-cta:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .mobile-menu {
@@ -173,7 +196,7 @@
 }
 
 /* ==========================================
-   CONTENEDOR GLOBAL MAXIMIZADO (MENOS ESPACIO LATERAL)
+   CONTENEDOR GLOBAL MAXIMIZADO (ANCHO COMPLETO 3D)
    ========================================== */
 .section-shell {
   width: 100%;
@@ -184,21 +207,28 @@
 }
 
 .section-index {
-  color: var(--espresso);
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(5, 5, 8, 0.7);
+  border: 1px solid rgba(247, 217, 120, 0.3);
+  border-radius: 6px;
+  color: #f7d978;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-bottom: 24px;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 6px 16px rgba(0,0,0,0.5);
 }
 
 .eyebrow {
-  color: var(--espresso);
+  color: #f7d978;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-weight: 800;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-bottom: 16px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
 h1, h2, h3 {
@@ -212,14 +242,20 @@ h1, h2 {
   line-height: 0.85;
   letter-spacing: -0.02em;
   font-size: clamp(4.5rem, 9vw, 8.5rem);
+  text-shadow: 0 4px 15px rgba(0,0,0,0.9);
 }
 
 h1 em, h2 em {
-  color: var(--espresso);
+  background: linear-gradient(135deg, #f7d978 0%, #d4af37 60%, #aa841e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-style: normal;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.9));
 }
 
-/* 1. HERO SECTION - 100VH PANTALLA COMPLETA SIN FILTROS DE SOMBRA */
+/* ==========================================
+   SECCIÓN 1: HERO - 100VH PANTALLA COMPLETA CON 3D GLASS OVERLAY
+   ========================================== */
 .hero-section {
   position: relative;
   width: 100vw;
@@ -245,7 +281,7 @@ h1 em, h2 em {
   object-fit: cover;
   object-position: center;
   display: block;
-  filter: none !important; /* CERO FILTROS OSCUROS */
+  filter: none !important; /* CERO FILTROS DE SOMBRA */
   opacity: 1;
 }
 
@@ -254,22 +290,26 @@ h1 em, h2 em {
   bottom: 10%;
   left: 3.5%;
   z-index: 10;
-  max-width: 550px;
-  padding: 40px;
-  background: rgba(5, 5, 8, 0.45);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 12px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  max-width: 580px;
+  padding: 42px;
+  background: rgba(8, 8, 14, 0.48);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  box-shadow: 
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -3px 8px 0 rgba(0, 0, 0, 0.8),
+    0 30px 70px rgba(0, 0, 0, 0.85);
 }
 
 .hero-tag {
-  color: var(--espresso);
+  color: #f7d978;
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.9);
 }
 
 .hero-copy-overlay h2 {
@@ -277,18 +317,14 @@ h1 em, h2 em {
   line-height: 0.85;
   margin: 14px 0 16px;
   color: var(--paper);
-  text-shadow: 0 2px 10px rgba(0,0,0,0.95);
-}
-
-.hero-copy-overlay h2 em {
-  color: var(--espresso);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.95);
 }
 
 .hero-copy-overlay p {
   color: #e2ded8;
   font-size: 15px;
   line-height: 1.5;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.95);
 }
 
@@ -296,23 +332,28 @@ h1 em, h2 em {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #d4af37 0%, #aa841e 100%);
-  color: #050508;
-  border: 0;
-  border-radius: 6px;
+  padding: 15px 32px;
+  background: linear-gradient(135deg, #f7d978 0%, #d4af37 50%, #aa841e 100%);
+  color: #040407;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
   font-size: 10px;
   font-weight: 900;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px 0 rgba(0, 0, 0, 0.4),
+    0 10px 30px rgba(212, 175, 55, 0.45);
   transition: all 0.25s ease;
 }
 
 .hero-copy-overlay button:hover {
-  background: var(--paper);
+  background: linear-gradient(135deg, #ffffff 0%, #f7d978 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.8),
+    0 14px 35px rgba(255, 255, 255, 0.45);
 }
 
 .hero-bottom-rail {
@@ -325,18 +366,19 @@ h1 em, h2 em {
   align-items: center;
   justify-content: space-between;
   padding: 16px 3.5%;
-  background: rgba(5, 5, 8, 0.4);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  color: #b0ab9f;
+  background: rgba(8, 8, 14, 0.45);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  color: #c5c0b4;
   font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .hero-bottom-rail a {
-  color: var(--espresso);
+  color: #f7d978;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -347,12 +389,15 @@ h1 em, h2 em {
   color: var(--paper);
 }
 
-/* 2. MENU SECTION - NUEVA PALETA DORADO NOIR */
+/* ==========================================
+   SECCIÓN 2: MENÚ / SELECCIÓN - CAFÉ TOSTADO DEEP ESPRESSO & COCOA (3D RELIEF)
+   ========================================== */
 .menu-section {
-  background: linear-gradient(180deg, #050508 0%, #0a090e 100%);
+  background: linear-gradient(180deg, #0e0906 0%, #1a120c 50%, #120c08 100%);
   padding-top: 100px;
   padding-bottom: 130px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(247, 217, 120, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .section-header {
@@ -364,18 +409,21 @@ h1 em, h2 em {
 
 .section-description {
   max-width: 360px;
-  color: var(--smoke);
+  color: #c8c2b7;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.55;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
 .menu-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  padding: 18px 24px;
+  background: rgba(8, 6, 5, 0.6);
+  border: 1px solid rgba(247, 217, 120, 0.25);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 10px 30px rgba(0, 0, 0, 0.6);
   margin-bottom: 40px;
 }
 
@@ -386,28 +434,32 @@ h1 em, h2 em {
 }
 
 .filter-list button {
-  padding: 10px 20px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: transparent;
-  color: var(--smoke);
+  padding: 10px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(18, 14, 11, 0.8);
+  color: #c5beae;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), 0 4px 10px rgba(0,0,0,0.4);
   transition: all 0.25s ease;
 }
 
 .filter-list button:hover,
 .filter-list button.is-active {
-  background: linear-gradient(135deg, #d4af37 0%, #aa841e 100%);
-  border-color: var(--espresso);
-  color: #050508;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  background: linear-gradient(135deg, #f7d978 0%, #d4af37 50%, #aa841e 100%);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #040407;
+  box-shadow: 
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.6),
+    0 6px 20px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
 }
 
 .menu-toolbar-note {
-  color: #938e83;
+  color: #a8a295;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -415,21 +467,21 @@ h1 em, h2 em {
 }
 
 .menu-toolbar-note span {
-  color: var(--espresso);
+  color: #f7d978;
 }
 
-/* GRID DE PRODUCTOS DORADO NOIR */
+/* REJILLA Y TARJETAS 3D RELIEVE SKEUOMORPHIC */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  gap: 30px;
   margin-bottom: 50px;
 }
 
 @media (min-width: 1550px) {
   .product-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 28px;
+    gap: 30px;
   }
 }
 
@@ -443,25 +495,34 @@ h1 em, h2 em {
 @media (max-width: 680px) {
   .product-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 22px;
   }
 }
 
 .product-card {
   position: relative;
-  height: clamp(500px, 48vh, 600px);
-  border-radius: 14px;
+  height: clamp(520px, 50vh, 620px);
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  background: #000;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid rgba(247, 217, 120, 0.28);
+  background: #080605;
+  box-shadow: 
+    inset 0 2px 2px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -3px 6px 0 rgba(0, 0, 0, 0.9),
+    0 20px 50px rgba(0, 0, 0, 0.85),
+    0 0 25px rgba(212, 175, 55, 0.15);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.38s ease, box-shadow 0.38s ease;
   isolation: isolate;
 }
 
 .product-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(212, 175, 55, 0.7);
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.25);
+  transform: translateY(-10px) scale(1.01);
+  border-color: rgba(247, 217, 120, 0.75);
+  box-shadow: 
+    inset 0 2px 4px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -4px 10px 0 rgba(0, 0, 0, 0.95),
+    0 30px 65px rgba(0, 0, 0, 0.95),
+    0 0 35px rgba(247, 217, 120, 0.35);
 }
 
 .card-bg-image {
@@ -475,11 +536,11 @@ h1 em, h2 em {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .product-card:hover .card-bg-image img {
-  transform: scale(1.06);
+  transform: scale(1.07);
 }
 
 .card-overlay-gradient {
@@ -487,10 +548,10 @@ h1 em, h2 em {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(5, 5, 8, 0.96) 0%,
-    rgba(5, 5, 8, 0.68) 45%,
-    rgba(5, 5, 8, 0.22) 80%,
-    rgba(5, 5, 8, 0.08) 100%
+    rgba(8, 6, 5, 0.97) 0%,
+    rgba(8, 6, 5, 0.72) 45%,
+    rgba(8, 6, 5, 0.22) 80%,
+    rgba(8, 6, 5, 0.08) 100%
   );
 }
 
@@ -498,7 +559,7 @@ h1 em, h2 em {
   position: absolute;
   inset: 0;
   z-index: 2;
-  padding: 28px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -511,7 +572,7 @@ h1 em, h2 em {
 }
 
 .product-number {
-  color: var(--espresso);
+  color: #f7d978;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -519,16 +580,17 @@ h1 em, h2 em {
 }
 
 .product-type-badge {
-  padding: 4px 12px;
-  background: rgba(5, 5, 8, 0.75);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 4px;
-  color: var(--paper);
+  padding: 5px 14px;
+  background: rgba(8, 6, 5, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(247, 217, 120, 0.35);
+  border-radius: 6px;
+  color: #faf7f2;
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.25), 0 4px 10px rgba(0,0,0,0.6);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
@@ -543,7 +605,7 @@ h1 em, h2 em {
   color: #ffffff;
   margin: 0 0 10px;
   letter-spacing: -0.01em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.85);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
 .card-desc {
@@ -559,7 +621,7 @@ h1 em, h2 em {
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   padding-top: 14px;
-  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  border-top: 1px solid rgba(247, 217, 120, 0.25);
   margin-bottom: 14px;
 }
 
@@ -570,7 +632,7 @@ h1 em, h2 em {
 }
 
 .product-specs small {
-  color: var(--espresso);
+  color: #f7d978;
   font-size: 7px;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -589,7 +651,7 @@ h1 em, h2 em {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: var(--espresso-glow);
+  color: #f7d978;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -603,12 +665,12 @@ h1 em, h2 em {
   align-items: center;
   justify-content: space-between;
   padding-top: 18px;
-  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  border-top: 1px solid rgba(247, 217, 120, 0.25);
 }
 
 .card-price small {
   display: block;
-  color: var(--smoke);
+  color: #a8a297;
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -617,7 +679,7 @@ h1 em, h2 em {
 }
 
 .card-price strong {
-  color: var(--espresso);
+  color: #f7d978;
   font-family: "Bebas Neue", sans-serif;
   font-size: 28px;
   line-height: 1;
@@ -628,23 +690,28 @@ h1 em, h2 em {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #d4af37 0%, #aa841e 100%);
-  border: 0;
-  border-radius: 6px;
-  color: #050508;
+  padding: 11px 22px;
+  background: linear-gradient(135deg, #f7d978 0%, #d4af37 50%, #aa841e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #040407;
   font-size: 9px;
   font-weight: 900;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px 0 rgba(0, 0, 0, 0.4),
+    0 6px 18px rgba(212, 175, 55, 0.35);
   transition: all 0.25s ease;
 }
 
 .card-action-btn:hover {
-  background: var(--paper);
+  background: linear-gradient(135deg, #ffffff 0%, #f7d978 100%);
   transform: scale(1.04);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.8),
+    0 8px 25px rgba(255, 255, 255, 0.45);
 }
 
 .menu-footer {
@@ -667,10 +734,13 @@ h1 em, h2 em {
   margin: 0 24px;
 }
 
-/* 3. LOCATION SECTION - PALETA COBRE ORO CON MAPA REAL */
+/* ==========================================
+   SECCIÓN 3: UBICACIÓN - ROYAL SLATE & COBALT OBSIDIAN (3D MAP BEZEL)
+   ========================================== */
 .location-section {
-  background: #0b090c;
-  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, #0b0e17 0%, #131929 50%, #0d101d 100%);
+  border-top: 1px solid rgba(247, 217, 120, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 100px;
   padding-bottom: 130px;
 }
@@ -683,29 +753,33 @@ h1 em, h2 em {
 }
 
 .location-card {
-  border: 1px solid var(--border-strong);
-  border-radius: 14px;
+  border: 1px solid rgba(247, 217, 120, 0.35);
+  border-radius: 18px;
   overflow: hidden;
-  background: #050508;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+  background: #080a12;
+  box-shadow: 
+    inset 0 2px 2px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -3px 8px 0 rgba(0, 0, 0, 0.9),
+    0 25px 60px rgba(0, 0, 0, 0.85);
 }
 
 .map-real-container {
   width: 100%;
-  height: 340px;
-  border-bottom: 1px solid var(--border);
+  height: 350px;
+  border-bottom: 1px solid rgba(247, 217, 120, 0.2);
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.8);
 }
 
 .address-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  padding: 24px;
-  background: #08070b;
+  padding: 26px;
+  background: #090c16;
 }
 
 .address-row span {
-  color: var(--espresso);
+  color: #f7d978;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -715,13 +789,13 @@ h1 em, h2 em {
 }
 
 .address-row strong {
-  color: #c2beb5;
+  color: #c8c4bc;
   font-size: 14px;
   line-height: 1.5;
 }
 
 .address-row small {
-  color: var(--espresso);
+  color: #f7d978;
   font-size: 10px;
 }
 
@@ -730,30 +804,37 @@ h1 em, h2 em {
   align-items: center;
   gap: 8px;
   margin-top: 28px;
-  padding: 14px 28px;
-  border: 1px solid var(--border-strong);
-  border-radius: 6px;
-  background: transparent;
+  padding: 14px 30px;
+  border: 1px solid rgba(247, 217, 120, 0.4);
+  border-radius: 8px;
+  background: rgba(11, 14, 23, 0.6);
   color: var(--paper);
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 8px 24px rgba(0,0,0,0.5);
   transition: all 0.25s ease;
 }
 
 .outline-cta:hover {
-  background: var(--espresso);
-  border-color: var(--espresso);
-  color: #050508;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+  background: linear-gradient(135deg, #f7d978 0%, #d4af37 50%, #aa841e 100%);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #040407;
+  box-shadow: 
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.6),
+    0 10px 30px rgba(212, 175, 55, 0.45);
+  transform: translateY(-2px);
 }
 
-/* 4. DELIVERY SECTION - CÁLIDO ÁMBAR */
+/* ==========================================
+   SECCIÓN 4: DELIVERY - CÁLIDO TOSTADO COBRE & ÁMBAR 3D
+   ========================================== */
 .delivery-section {
-  background: #0e0c10;
-  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, #160e08 0%, #24160d 50%, #191009 100%);
+  border-top: 1px solid rgba(229, 169, 104, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 100px;
   padding-bottom: 130px;
 }
@@ -768,64 +849,75 @@ h1 em, h2 em {
 .delivery-options {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .delivery-option {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 26px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.02);
+  padding: 28px;
+  border: 1px solid rgba(229, 169, 104, 0.3);
+  border-radius: 12px;
+  background: rgba(20, 13, 8, 0.7);
   text-decoration: none;
   color: var(--paper);
-  transition: all 0.25s ease;
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -2px 5px 0 rgba(0, 0, 0, 0.8),
+    0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: all 0.28s ease;
 }
 
 .delivery-option:hover {
-  border-color: var(--espresso);
-  background: rgba(212, 175, 55, 0.08);
-  transform: translateX(6px);
+  border-color: #f7d978;
+  background: rgba(229, 169, 104, 0.15);
+  transform: translateX(8px) translateY(-2px);
+  box-shadow: 
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.4),
+    0 16px 36px rgba(0, 0, 0, 0.75),
+    0 0 20px rgba(229, 169, 104, 0.25);
 }
 
 .delivery-option > span {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--espresso);
+  color: #f7d978;
 }
 
 .delivery-option > span small {
-  color: var(--smoke);
+  color: #a8a297;
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
 
 .delivery-option strong {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 500;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
 .delivery-note {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--smoke);
+  color: #a8a297;
   font-size: 11px;
   margin-top: 8px;
 }
 
 .delivery-note svg {
-  color: var(--espresso);
+  color: #f7d978;
 }
 
-/* 5. CONTACT SECTION & FOOTER */
+/* ==========================================
+   SECCIÓN 5: CONTACTO & FOOTER - OBSIDIAN GOLD GRADIENT 3D
+   ========================================== */
 .contact-section {
-  background: linear-gradient(180deg, #0a090e 0%, #050508 100%);
-  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, #110d0a 0%, #050508 100%);
+  border-top: 1px solid rgba(247, 217, 120, 0.25);
   padding-top: 100px;
   padding-bottom: 60px;
 }
@@ -841,31 +933,40 @@ h1 em, h2 em {
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .contact-details a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 26px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  padding: 22px 28px;
+  border: 1px solid rgba(247, 217, 120, 0.25);
+  border-radius: 12px;
+  background: rgba(12, 9, 8, 0.6);
   color: #c0bbb3;
   text-decoration: none;
   font-size: 16px;
+  box-shadow: 
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 4px 0 rgba(0, 0, 0, 0.8),
+    0 8px 24px rgba(0, 0, 0, 0.5);
   transition: all 0.25s ease;
 }
 
 .contact-details a svg:first-child {
-  color: var(--espresso);
+  color: #f7d978;
   margin-right: 12px;
 }
 
 .contact-details a:hover {
-  border-color: var(--espresso);
+  border-color: #f7d978;
   color: var(--paper);
-  background: rgba(212, 175, 55, 0.06);
+  background: rgba(212, 175, 55, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.35),
+    0 12px 30px rgba(0, 0, 0, 0.65);
 }
 
 .contact-footer {
@@ -887,13 +988,13 @@ h1 em, h2 em {
   gap: 8px;
   color: var(--paper);
   font-family: "Bebas Neue", sans-serif;
-  font-size: 24px;
+  font-size: 26px;
   text-decoration: none;
 }
 
 .footer-wordmark .wordmark-icon img {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
 }
 
 /* ==========================================
