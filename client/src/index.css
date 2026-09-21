@@ -59,7 +59,9 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 16px 4%;
+  max-width: 1880px;
+  margin: 0 auto;
+  padding: 16px 28px;
   background: rgba(5, 5, 5, 0.92);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
@@ -88,7 +90,7 @@
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 36px;
 }
 
 .site-nav button {
@@ -135,7 +137,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border: 1px solid var(--espresso);
   border-radius: 4px;
   background: var(--espresso);
@@ -161,14 +163,14 @@
 }
 
 /* ==========================================
-   DIFERENCIACIÓN DE SECCIONES Y SHELL
+   CONTENEDOR GLOBAL MAXIMIZADO (MENOS ESPACIO LATERAL)
    ========================================== */
 .section-shell {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1880px; /* Expandido para aprovechar el ancho completo de pantalla */
   margin: 0 auto;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 28px; /* Reducido espacio en blanco a los lados */
+  padding-right: 28px;
 }
 
 .section-index {
@@ -199,7 +201,7 @@ h1, h2 {
   margin: 0;
   line-height: 0.85;
   letter-spacing: -0.02em;
-  font-size: clamp(4.5rem, 9vw, 8rem);
+  font-size: clamp(4.5rem, 9vw, 8.5rem);
 }
 
 h1 em, h2 em {
@@ -207,10 +209,12 @@ h1 em, h2 em {
   font-style: normal;
 }
 
-/* 1. HERO SECTION - FULL SCREEN, CLEAN VIBRANT IMAGE WITHOUT OVERLAY SHADOW */
+/* 1. HERO SECTION - FULL WIDTH EXPANSIÓN MAXIMA */
 .hero-section {
   position: relative;
   width: 100%;
+  max-width: 1880px;
+  margin: 0 auto;
   background: #050505;
   padding: 0 0 30px;
 }
@@ -218,7 +222,7 @@ h1 em, h2 em {
 .hero-poster-wrap {
   position: relative;
   width: 100%;
-  height: clamp(550px, 82vh, 850px);
+  height: clamp(600px, 85vh, 920px);
   overflow: hidden;
   background: #000;
 }
@@ -229,17 +233,17 @@ h1 em, h2 em {
   object-fit: cover;
   object-position: center;
   display: block;
-  filter: none !important; /* Quita cualquier sombra/filtro que oscurezca */
+  filter: none !important;
   opacity: 1;
 }
 
 .hero-copy-overlay {
   position: absolute;
   bottom: 8%;
-  left: 4%;
+  left: 3.5%;
   z-index: 10;
-  max-width: 520px;
-  padding: 36px;
+  max-width: 550px;
+  padding: 40px;
   background: rgba(5, 5, 5, 0.55);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -269,7 +273,7 @@ h1 em, h2 em {
 
 .hero-copy-overlay p {
   color: #e2ded8;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
   margin-bottom: 24px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.9);
@@ -279,7 +283,7 @@ h1 em, h2 em {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 24px;
+  padding: 14px 28px;
   background: var(--espresso);
   color: #050505;
   border: 0;
@@ -300,7 +304,7 @@ h1 em, h2 em {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 20px 4%;
+  padding: 20px 28px;
   color: #827d76;
   font-size: 9px;
   font-weight: 700;
@@ -339,14 +343,14 @@ h1 em, h2 em {
 
 .intro-copy p {
   color: #c2beb5;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
   margin: 0 0 28px;
 }
 
 .intro-detail {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   color: var(--espresso);
   font-size: 10px;
   font-weight: 800;
@@ -360,7 +364,7 @@ h1 em, h2 em {
   gap: 8px;
 }
 
-/* 3. MENU SECTION - TARJETAS CON FOTO COMPLETA Y TEXTO OVERLAY CON SOMBRA */
+/* 3. MENU SECTION - CARTA EXPANSIÓN MÁXIMA */
 .menu-section {
   background: #060608;
   padding-top: 100px;
@@ -375,11 +379,10 @@ h1 em, h2 em {
 }
 
 .section-description {
-  max-width: 320px;
+  max-width: 360px;
   color: var(--smoke);
   font-size: 14px;
   line-height: 1.5;
-
 }
 
 .menu-toolbar {
@@ -394,12 +397,12 @@ h1 em, h2 em {
 
 .filter-list {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .filter-list button {
-  padding: 8px 16px;
+  padding: 10px 20px;
   border: 1px solid var(--border);
   border-radius: 4px;
   background: transparent;
@@ -430,17 +433,38 @@ h1 em, h2 em {
   color: var(--espresso);
 }
 
-/* GRID DE PRODUCTOS EN TARJETAS */
+/* GRID ADAPTATIVO PARA IMÁGENES MÁS GRANDES Y SIN ESPACIOS LATERALES EXCESIVOS */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columnas amplias por defecto */
   gap: 28px;
   margin-bottom: 50px;
 }
 
+@media (min-width: 1550px) {
+  .product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columnas en monitores muy anchos */
+    gap: 28px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas en laptops / tablets */
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 columna en móviles, fotos gigantes */
+    gap: 20px;
+  }
+}
+
 .product-card {
   position: relative;
-  height: 520px;
+  height: clamp(500px, 48vh, 600px); /* Tarjeta más alta y amplia */
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -470,19 +494,18 @@ h1 em, h2 em {
 }
 
 .product-card:hover .card-bg-image img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
-/* Gradient suave en la parte inferior para mejorar contraste sin tapar la imagen */
 .card-overlay-gradient {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
     rgba(5, 5, 5, 0.95) 0%,
-    rgba(5, 5, 5, 0.7) 45%,
-    rgba(5, 5, 5, 0.25) 80%,
-    rgba(5, 5, 5, 0.1) 100%
+    rgba(5, 5, 5, 0.68) 45%,
+    rgba(5, 5, 5, 0.22) 80%,
+    rgba(5, 5, 5, 0.08) 100%
   );
 }
 
@@ -490,7 +513,7 @@ h1 em, h2 em {
   position: absolute;
   inset: 0;
   z-index: 2;
-  padding: 26px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -507,12 +530,12 @@ h1 em, h2 em {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.16em;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
 }
 
 .product-type-badge {
-  padding: 4px 10px;
-  background: rgba(5, 5, 5, 0.65);
+  padding: 4px 12px;
+  background: rgba(5, 5, 5, 0.7);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4px;
@@ -530,20 +553,19 @@ h1 em, h2 em {
 }
 
 .card-title {
-  font-size: 2.8rem;
+  font-size: clamp(2.6rem, 3.2vw, 3.4rem);
   line-height: 0.9;
   color: #ffffff;
   margin: 0 0 10px;
   letter-spacing: -0.01em;
-  /* Sombra suave en las letras para que resalten perfectamente */
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
 .card-desc {
   color: #e2ded8;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.45;
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
@@ -551,9 +573,9 @@ h1 em, h2 em {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  margin-bottom: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  margin-bottom: 14px;
 }
 
 .product-specs span {
@@ -595,8 +617,8 @@ h1 em, h2 em {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .card-price small {
@@ -612,7 +634,7 @@ h1 em, h2 em {
 .card-price strong {
   color: var(--paper);
   font-family: "Bebas Neue", sans-serif;
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
 }
@@ -621,7 +643,7 @@ h1 em, h2 em {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
+  padding: 10px 20px;
   background: var(--espresso);
   border: 0;
   border-radius: 4px;
@@ -683,7 +705,7 @@ h1 em, h2 em {
 
 .map-real-container {
   width: 100%;
-  height: 320px;
+  height: 340px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -707,7 +729,7 @@ h1 em, h2 em {
 
 .address-row strong {
   color: #c2beb5;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -721,7 +743,7 @@ h1 em, h2 em {
   align-items: center;
   gap: 8px;
   margin-top: 28px;
-  padding: 12px 24px;
+  padding: 14px 28px;
   border: 1px solid var(--border);
   border-radius: 4px;
   background: transparent;
@@ -765,7 +787,7 @@ h1 em, h2 em {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px;
+  padding: 26px;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.02);
@@ -795,7 +817,7 @@ h1 em, h2 em {
 }
 
 .delivery-option strong {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
 }
 
@@ -831,19 +853,19 @@ h1 em, h2 em {
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .contact-details a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 24px;
+  padding: 20px 26px;
   border: 1px solid var(--border);
   border-radius: 8px;
   color: #c0bbb3;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   transition: all 0.2s ease;
 }
 
@@ -887,23 +909,24 @@ h1 em, h2 em {
 }
 
 /* ==========================================
-   RESPONSIVIDAD PERFECTA
+   RESPONSIVIDAD PERFECTA ADAPTATIVA
    ========================================== */
 @media (max-width: 900px) {
+  .section-shell, .site-header, .hero-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .intro-grid, .location-grid, .delivery-grid, .contact-grid {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-  
-  .product-grid {
-    grid-template-columns: 1fr;
   }
   
   .hero-copy-overlay {
     position: relative;
     bottom: auto;
     left: auto;
-    width: 92%;
+    width: 100%;
     margin: -60px auto 0;
     padding: 24px;
   }
